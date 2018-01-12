@@ -1,31 +1,34 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const exphbs = require('express-handlebars');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// var app = express();
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
-var router = express.Router();
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
-router.get('/register', (req, res) => {
-    res.render('register');
-});
+// var router = express.Router();
+module.exports = function(app) {
+    app.get('/register', (req, res) => {
+        res.render('register');
+    });
 
-router.post('/register', (req, res) => {
-    user.create([
-        req.body.first_name,
-        req.body.last_name,
-        req.body.username,
-        req.body.password,
-        req.body.email,
-        req.body.height_feet,
-        req.body.height_inches,
-        req.body.weight,
-        // DOES NOT WORK:
-        req.body.allergies
-    ]);
-    res.redirect('/profile');
-});
+    app.post('/register', (req, res) => {
+        user.create([
+            req.body.first_name,
+            req.body.last_name,
+            req.body.username,
+            req.body.password,
+            req.body.email,
+            req.body.height_feet,
+            req.body.height_inches,
+            req.body.weight,
+            // DOES NOT WORK:
+            req.body.allergies
+        ]);
+        res.redirect('/profile');
+    });
+}

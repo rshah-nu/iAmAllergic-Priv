@@ -16,7 +16,7 @@ CREATE TABLE users(
     allergy4 BIT NOT NULL,
     allergy5 BIT NOT NULL,
     allergy6 BIT NOT NULL,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
 );
 
 CREATE TABLE userNutritionalValue(

@@ -3,12 +3,12 @@ var orm = require("../config/orm.js");
 
 var user_profile = {
   all: function(cb) {
-    orm.all("user", function(res) {
+    orm.all("users", function(res) {
       cb(res);
     });
   },
   create: function(cols, vals, cb) {
-    orm.create("user", cols, vals, function(res) {
+    orm.create("users", cols, vals, function(res) {
       cb(res);
     });
   },

@@ -1,21 +1,22 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const exphbs = require('express-handlebars');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// var app = express();
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
-var router = express.Router();
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
-router.get('/profile', (req, res) => {
-    profile.all((data) => {
-        res.render("profile", {data})
+// var router = express.Router();
+module.exports = function(app){
+    app.get('/profile', (req, res) => {
+        res.render("profile");
     });
-});
 
-router.get('/upcsearch', (req, res) => {
-    // CALL TO API AND CALLBACK W/ RESULTS TO MODAL
-});
+    app.get('/foodsearch', (req, res) => {
+        // CALL TO API AND CALLBACK W/ RESULTS TO MODAL
+    });
+}
